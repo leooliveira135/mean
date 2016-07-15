@@ -1,5 +1,6 @@
 // config/config.js
 
 module.exports = {
-    return require('./env/' + process.env.NODE_ENV + '.js');
+    processo = require('./env/' + process.env.NODE_ENV + '.js');
+    return processo;
 }
