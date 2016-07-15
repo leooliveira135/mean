@@ -1,4 +1,5 @@
 // test/data.js
+Object.assign = require('object-assign');
 
 var MongoClient = require('mongodb').MongoClient;
 var contatos = [

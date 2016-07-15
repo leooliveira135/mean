@@ -23,6 +23,7 @@
     "mongodb": "^2.2.1",
     "mongoose": "^4.5.3",
     "mongoose-findorcreate": "^0.1.2",
+    "object-assign": "^4.1.0",
     "passport": "^0.2.2",
     "passport-github": "^0.1.5"
   },
