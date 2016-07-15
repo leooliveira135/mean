@@ -1,0 +1,40 @@
+<!-- public/index.html -->
+<!doctype html>
+<html ng-app="mean">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <!-- build:css css/index.min.css -->
+    <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap-theme.css">
+    <!-- endbuild -->
+    <title>Bem-vindo</title>
+</head>
+
+<body ng-controller="ContatosController" class="container">
+    <h1>Bem vindo ao Contatooh</h1>
+    <button ng-click="incrementa()">Novo</button>
+    <p>Contatos cadastrados: {{total}}</p>
+
+    <div class="text-right">
+        <p>
+            Logado como: <span id="usuario-logado">
+                <%=usuarioLogado %>
+            </span>
+            <a href="/logout">Logout</a>
+        </p>
+    </div>
+    <div ng-view></div>
+    <!-- build:js js/index.min.js -->
+    <script src="/public/vendor/angular-resource/angular-resource.js"></script>
+    <script src="/public/vendor/angular-route/angular-route/angular-route.js"></script>
+    <script src="/public/vendor/angular/angular.js"></script>
+    <script src="/public/js/controllers/ContatoController.js"></script>
+    <script src="/public/js/controllers/ContatosController.js"></script>
+    <script src="/public/js/services/ContatoService.js"></script>
+    <script src="/public/js/main.js"></script>
+    <!-- endbuild -->
+</body>
+
+</html>

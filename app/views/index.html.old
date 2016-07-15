@@ -1,0 +1,28 @@
+<!-- public/index.html -->
+<!doctype html>
+<html ng-app="mean">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap-theme.css">
+    <title>Bem-vindo</title>
+</head>
+
+<body ng-controller="ContatosController" class="container">
+    <h1>Bem vindo ao Contatooh</h1>
+    <button ng-click="incrementa()">Novo</button>
+    <p>Contatos cadastrados: {{total}}</p>
+
+    <div ng-view></div>
+    <script src="/bower_components/angular-resource/angular-resource.js"></script>
+    <script src="/bower_components/angular-route/angular-route.js"></script>
+    <script src="/bower_components/angular/angular.js"></script>
+    <script src="js/controllers/ContatoController.js"></script>
+    <script src="js/controllers/ContatosController.js"></script>
+    <script src="js/services/ContatoService.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

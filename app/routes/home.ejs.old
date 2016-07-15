@@ -1,0 +1,9 @@
+/*
+    O objeto abaixo chama a função da rota do nosso
+    objeto com o papel de controller.
+*/
+
+module.exports = function (app) {
+    var controller = app.controllers.home;
+    app.get('/', controller.index);
+};
