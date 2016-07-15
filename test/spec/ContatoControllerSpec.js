@@ -27,7 +27,7 @@ describe("ContatoController", function () {
             '$routeParams': {
                 contatoId: 1
             },
-            '$scope': $scope;
+            '$scope': $scope
         });
         $httpBackend.flush();
         expect($scope.contato._id).toBeDefined();
