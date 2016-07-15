@@ -2,7 +2,8 @@ var http = require('http');
 var app = require('./config/express')();
 require('./config/express')(app);
 require('./config/passport');
-require('./config/database')('mongodb://localhost/mean');
+var config = require('./config/config')();
+require('./config/database')(config.db);
 
 /*
     Subindo o servidor Node utilizando a 

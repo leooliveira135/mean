@@ -4,4 +4,4 @@
 node_modules/
 public/vendor/
 dist/
-script/
+scripts/
