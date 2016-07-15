@@ -62,15 +62,16 @@ module.exports = function (config) {
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
         browsers: ['Chrome'],
+        browserNoActivityTimeout: 60000,
+        browserDisconnectTimeout: 10000,
+        browserDisconnectTolerance: 1,
+        captureTimeout: 60000
 
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
-        singleRun: true
+            singleRun: false
 
-            browserNoActivityTimeout: 60000,
-        browserDisconnectTimeout: 10000,
-        browserDisconnectTolerance: 1
-        captureTimeout: 60000
+
     })
 }
