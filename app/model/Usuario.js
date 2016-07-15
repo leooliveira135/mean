@@ -23,9 +23,9 @@ var userSchema = new schema({
 });
 
 try {
-    schema.plugin(findOrCreate);
+    userSchema.plugin(findOrCreate);
     module.exports = mongoose.model('Contato');
 } catch (err) {
-    schema.plugin(findOrCreate);
+    userSchema.plugin(findOrCreate);
     module.exports = mongoose.model('Contato', userSchema);
 }
