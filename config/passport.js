@@ -6,11 +6,12 @@ var config = require('./config')();
 
 module.exports = function () {
     var Usuario = mongoose.model('Usuario');
+    var githubCallback = 'http://' + config.domain + ':' + config.port + '/auth/github/callback';
 
     passport.use(new githubStrategy({
         clientID: config.clientID,
         clientSecret: config.clientSecret,
-        callbackURL: 'SUA REDIRECT_URI'
+        callbackURL: githubCallback
     }, function (accessToken, refreshToken, profile, done) {
         Usuario.findOrCreate({
             "login": profile.username
