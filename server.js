@@ -1,6 +1,5 @@
 var http = require('http');
 var app = require('./config/express')();
-require('./config/express')(app);
 require('./config/passport');
 var config = require('./config/config')();
 require('./config/database')(config.db);
@@ -10,6 +9,6 @@ require('./config/database')(config.db);
     instância do Express
 */
 
-http.createServer(app).listen(app.get('port'), function () {
+http.createServer(app).listen(config.port, config.address, function () {
     console.log('Express Https Server ' + config.address + ' (' + config.env + ') escutando na porta ' + config.port);
 });

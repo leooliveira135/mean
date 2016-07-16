@@ -1,5 +1,9 @@
 // config/config.js
 
 module.exports = function () {
-    return require('./env/' + process.env.NODE_ENV + '.js');
+    try {
+        return require('./env/' + process.env.NODE_ENV + '.js');
+    } catch (err) {
+        console.log(err);
+    }
 }
