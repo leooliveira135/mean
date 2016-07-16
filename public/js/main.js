@@ -1,4 +1,4 @@
-var app = angular.module('mean', ['ngRoute', 'ngResource']).config(function ($routeProvider) {
+var app = angular.module('mean', ['ngRoute', 'ngResource', 'meusComponentes']).config(function ($routeProvider) {
     $routeProvider.when('/contatos', {
         templateUrl: 'partials/contatos.html',
         controller: 'ContatosController'

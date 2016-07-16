@@ -5,8 +5,10 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
+    <!-- build:css css/contatos.min.css -->
     <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap-theme.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -19,6 +21,16 @@
     <button class="btn btn-primary" ng-click="incrementa()">Novo</button>
     <input ng-model="filtro" type="search" placeholder="parte do nome" />
     <p ng-show="contatos.length">Contatos cadastrados: {{contatos.length}}</p>
+
+    <meu-painel titulo="Listagem de contatos">
+        <!-- apenas a div da tabela dentro da diretiva -->
+        <div class="table-responsive">
+            <table class="table table-hover">
+                <!-- dados da tabela omitido -->
+            </table>
+        </div>
+    </meu-painel>
+
     <a ng-href="#/contato" class="btn btn-primary">Novo Contato</a>
     <p class="text-info" ng-hide="contatos.length">
         Não há contatos cadastrados
@@ -39,14 +51,15 @@
                 <td>{{contato.email}}</td>
                 <td>{{contato.emergencia.nome}}</td>
                 <td class="text-center">
-                    <button class="btn btn-warning" ng-click="remove(contato)">
-                        Remover</button>
+                    <meu-botao-aviso nome="Remover" acao="remove(contato)">
+                    </meu-botao-aviso>
                 </td>
             </tr>
         </table>
     </div>
 
     <div ng-view/>
+    <!-- build:js js/contatos.min.js -->
     <script src="/public/vendor/angular/angular.js"></script>
     <script src="/public/vendor/angular-resource/angular-resource.js"></script>
     <script src="/public/vendor/angular-route/angular-route.js"></script>
@@ -54,6 +67,7 @@
     <script src="/public/js/controllers/ContatoController.js"></script>
     <script src="/public/js/controllers/ContatosController.js"></script>
     <script src="/public/js/services/ContatoService.js"></script>
+    <!-- endbuild -->
 </body>
 
 

@@ -5,8 +5,10 @@
 <head>
     <meta name="viewport" content="width=device-width">
     <meta charset="utf-8">
+    <!-- build:css css/contato.min.css -->
     <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="/public/vendor/bootstrap/dist/css/bootstrap.css">
+    <!-- endbuild -->
 </head>
 
 <body>
@@ -35,11 +37,12 @@
 
         <div>
             <button type="submit" class="btn btn-primary">Salvar</button>
-            <a href="#/" class="btn btn-default">Voltar</a>
+            <a id="botao-voltar" meu-focus focus="contatoSalvo" href="#/" class="btn btn-default">Voltar</a>
         </div>
     </form>
 
     <div ng-view/>
+    <!-- build:js js/contato.min.js -->
     <script src="/public/vendor/angular/angular.js"></script>
     <script src="/public/vendor/angular-resource/angular-resource.js"></script>
     <script src="/public/vendor/angular-route/angular-route.js"></script>
@@ -47,6 +50,7 @@
     <script src="/public/js/controllers/ContatoController.js"></script>
     <script src="/public/js/controllers/ContatosController.js"></script>
     <script src="/public/js/services/ContatoService.js"></script>
+    <!-- endbuild -->
 </body>
 
 </html>

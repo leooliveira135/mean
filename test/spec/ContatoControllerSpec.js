@@ -33,3 +33,43 @@ describe("ContatoController", function () {
         expect($scope.contato._id).toBeDefined();
     }));
 });
+
+describe('meuBotaoAviso', function () {
+    var $scope;
+    var element;
+
+    beforeEach(function () {
+        module('meusComponentes');
+        inject(function ($rootScope, $compile) {
+            $scope = $rootScope.$new();
+            element = angular.element('<meu-botao-aviso nome="Remover" acao="remove()">');
+            $compile(element)($scope);
+            $scope.$digest();
+        });
+    });
+
+    it('Deve criar um botão de aviso com texto e função', function () {
+        expect(element.text()).toContain('Remover');
+        expect(element.attr('acao')).toBe('remove()');
+    });
+});
+
+describe('meuFocus', function () {
+
+});
+
+describe('meuPainel', function () {
+    var $scope;
+    var element;
+
+    beforeEach(function () {
+        module('meusComponentes');
+        module('templates');
+        inject(function ($compile, $rootScope) {
+            $scope = $rootScope.$new();
+            element = angular.element('<meu-painel titulo="Principal"><p>Oi</p></meu-painel>');
+            $compile(element)($scope);
+            $scope.$digest();
+        });
+    });
+});

@@ -22,6 +22,8 @@ angular.module('mean').controller('ContatoController', ['$scope', '$routeParams'
                     texto: 'Salvo com sucesso'
                 };
                 $scope.contato = new Contato();
+                document.querySelector('#botao-voltar').focus();
+                $scope.$broadcast('contatoSalvo');
             })
             .catch(function (erro) {
                 $scope.mensagem = {
