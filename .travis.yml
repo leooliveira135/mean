@@ -19,7 +19,7 @@ before_install:
 - bower install
 before_script:
 - node test/data.js
-- grunt minifica
+- grunt minifica    
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
 - node server &
