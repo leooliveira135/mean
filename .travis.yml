@@ -38,7 +38,7 @@ deploy:
     
 before-deploy:
     - git config --global user.email oliveiraleonardo61@gmail.com
-    - git config --global.user leooliveira135
+    - git config --global user.name leooliveira135
     - git checkout $TRAVIS_BRANCH
     - git add --all
     - git commit -am "Integração Travis com OpenShift"
