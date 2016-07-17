@@ -1,33 +1,43 @@
 language: node_js
 node_js:
-    - 0.10
+- 0.1
 notifications:
-    - oliveiraleo135@hotmail.com
-    
+- oliveiraleo135@hotmail.com
 services:
-    - mongodb
-        
+- mongodb
 env:
-    global:
-        - NODE_ENV: test
-        
+  global:
+  - NODE_ENV: test
 addons:
-    sauce_connect: true
-    
+  sauce_connect: true
 before_install:
-    - npm install -g bower@1.3
-    - npm install -g grunt-cli@0.1
-    - npm install -g karma-cli@0.0
-    - npm install -g protractor@1.5
-    - webdriver-manager update
-    - bower install
-    
+- npm install -g bower@1.3
+- npm install -g grunt-cli@0.1
+- npm install -g karma-cli@0.0
+- npm install -g protractor@1.5
+- webdriver-manager update
+- bower install
 before_script:
-    - node test/data.js
-    - grunt
-    - cd dist
-    
+- node test/data.js
+- grunt minifica
+- cd dist
 script:
-    - karma start config/karma.config.js --single-run --browsers PhantomJS
-    - node server &
-    - protractor config/protractor.js
+- karma start config/karma.config.js --single-run --browsers PhantomJS
+- node server &
+- protractor config/protractor.js
+deploy:
+  provider: openshift
+  user: rocksrocker13@gmail.com
+  password:
+    secure: iwNbdEGv7CH1Ly+k214t5m1wCW51QizFzyARP7pW9G2/6GvXFQneP7yxWByFOQaetBFzGAtfgvd8D2xb8gUnK+Obp09a+axEaX8/etjddpYmOFQjRLPzXaj2bfIXk/vGnYwo5I2NBGFb718ibSrgG90r+sOuTIMGvWvyoMZaNtcEQD/8cGQ99Y6n2Oo3ULp/Nam33l1UvX7RjfmgJEIgVnTktNf9mvOFKmt9gpWvgo2zWRwObb4zQO12T7QGbRRd3oADE1HjiND5T+hzIyHrrHGXU5Z9hlKgSesHCZ2b+lg0ilLjM53HHhCq6UqPGVJplkxnL0/OHL/p9OItZqqShOM7EqZXtE/DzMT2y/Jt9+WeuEZcrBnI9Xmirt0OyzHyYmV3MRWwTexUW+2AATYi9VfKNBz7p8+3VbiLjPD4VClVoGglyYa0e3U+RskXVDHDZpDM2aLNO4ywW+f2qLATvhsUlfab+Za5PwZdcW4skIHzY+8kxeHUVXEEMLyV+oW5wZ0bb5Z0cKDj7D5dts1OACubEkXpcxe563TPaUGAJNPe9D47SJmbY5XwKNSAwkZT2sTS93bxhDTx9mtxm4Qk2+IOQgswqC4IdgTila8HZO5ql6Au0U7YU6VWjmCxv1Mm26L0cd3MPbyCS6xxXLYSzRSqCQeR8fzBU4lr0K6EN9c=
+  app: mean
+  domain: meanjs16
+  on:
+    repo: leooliveira135/mean
+    
+before-deploy:
+    - git config --global user.email oliveiraleonardo61@gmail.com
+    - git config --global.user leooliveira135
+    - git checkout $TRAVIS_BRANCH
+    - git add --all
+    - git commit -am "Integração Travis com OpenShift"
