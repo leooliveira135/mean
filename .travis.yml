@@ -20,7 +20,6 @@ before_install:
 before_script:
 - node test/data.js
 - grunt minifica
-- cd dist
 script:
 - karma start config/karma.config.js --single-run --browsers PhantomJS
 - node server &
