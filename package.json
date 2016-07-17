@@ -40,7 +40,7 @@
     "karma-chai": "^0.1.0",
     "karma-chrome-launcher": "^1.0.1",
     "karma-jasmine": "^1.0.2",
-    "karma-ng-html2js-preprocessor": "^0.1.2",
+    "karma-ng-html2js-preprocessor": "^1.0.0",
     "karma-phantomjs-launcher": "^0.1.4",
     "karma-requirejs": "^1.0.0",
     "requirejs": "^2.2.0"
